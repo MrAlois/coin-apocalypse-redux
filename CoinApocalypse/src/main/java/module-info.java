@@ -3,7 +3,10 @@ module gamedev.CoinApocalypse {
     requires javafx.fxml;
 	requires javafx.base;
 	requires javafx.graphics;
+	requires java.desktop;
+	requires java.sql;
 
-    opens CoinApocalypse to javafx.fxml;
+    opens CoinApocalypse.scenes to javafx.fxml;
     exports CoinApocalypse;
+    exports CoinApocalypse.scenes;
 }

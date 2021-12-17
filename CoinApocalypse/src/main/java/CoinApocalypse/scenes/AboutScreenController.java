@@ -1,9 +1,11 @@
-package CoinApocalypse;
+package CoinApocalypse.scenes;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import CoinApocalypse.App;
+import CoinApocalypse.Sound;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -21,6 +23,7 @@ public class AboutScreenController implements Initializable {
 	
     @FXML
     private void handleButton(ActionEvent event) throws IOException {
+    	Sound.click.play();
     	if(event.getSource() == button_menu) {
     		App.setRoot("menu_screen");
     	}

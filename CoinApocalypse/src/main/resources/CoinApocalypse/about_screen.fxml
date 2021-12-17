@@ -4,7 +4,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1024.0" style="-fx-background-color: GREY;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CoinApocalypse.AboutScreenController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1024.0" style="-fx-background-color: GREY;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CoinApocalypse.scenes.AboutScreenController">
    <children>
       <Button fx:id="button_menu" defaultButton="true" depthTest="ENABLE" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleButton" prefHeight="25.0" prefWidth="85.0" text="Menu" />
       <ImageView fx:id="imageview" depthTest="ENABLE" fitHeight="800.0" fitWidth="1024.0" pickOnBounds="true" preserveRatio="true" />
