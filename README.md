@@ -20,6 +20,7 @@ Feel free to inspire yourself and if need be, comment and objectively critize.
 - JDBC
 
 #### Additional
+- [SceneBuiler](https://gluonhq.com/products/scene-builder/) for efficient FXML editing
 - Some of the knowledge about old 8-bit games[^2]
 - Game patterns based on a book called [Game design patterns](https://gameprogrammingpatterns.com/contents.html)
 
@@ -49,6 +50,7 @@ Feel free to inspire yourself and if need be, comment and objectively critize.
 ## Sounds
 
 ## Gameloop
+![Gameplay screenshot](/CoinApocalypse/Screenshots/Gameplay1.PNG?raw=true "Gameplay")
 
 
 [^1]: Gameplay: https://www.youtube.com/watch?v=w-SgjPvZOHk
