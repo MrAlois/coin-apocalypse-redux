@@ -20,6 +20,7 @@ Feel free to inspire yourself and if need be, comment and objectively critize.
 - JDBC
 
 #### Additional
+- [SceneBuiler](https://gluonhq.com/products/scene-builder/) for efficient FXML editing
 - Some of the knowledge about old 8-bit games[^2]
 - Game patterns based on a book called [Game design patterns](https://gameprogrammingpatterns.com/contents.html)
 
@@ -44,11 +45,37 @@ Feel free to inspire yourself and if need be, comment and objectively critize.
 
 ## Design Patterns
 
+There are 
+### Static examples
+
+Sound.java
+```java
+import java.io.File;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+
+public class Sound {
+	public static Sound hurt = loadSound("src/main/resources/snd/hitHurt.wav");
+	public static Sound jump = loadSound("src/main/resources/snd/jump.wav");
+	public static Sound coin = loadSound("src/main/resources/snd/pickupCoin.wav");
+	public static Sound click = loadSound("src/main/resources/snd/click.wav");
+	
+     private Clip clip;
+     
+	public static Sound loadSound(String fileName) {...}
+	public void play() {...} // Method used outside this class
+}
+```
+
 ## Graphics
+![SpriteSheet](/CoinApocalypse/src/main/resources/img/game/SpriteBook.png?raw=true "Sprite Sheet")
 
 ## Sounds
 
 ## Gameloop
+![Gameplay screenshot](/Screenshots/Gameplay1.PNG?raw=true "Gameplay")
 
 
 [^1]: Gameplay: https://www.youtube.com/watch?v=w-SgjPvZOHk
