@@ -46,7 +46,6 @@ public class Game {
 	private long startTime;
 	
 	public Game(GraphicsContext gc, LinkedList<KeyCode> keysPressed) {
-		
 		this.gc = gc;
 		this.keysPressed = keysPressed;
 	}
@@ -218,7 +217,7 @@ public class Game {
 		
 		exit();
 		
-		//TODO Insert data to secret table in a database
+		//TODO Insert gamedev
 		//TODO GameOver screen
 		
 		try {
