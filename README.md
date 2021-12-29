@@ -1,7 +1,18 @@
 # Coin Apocalypse - Semestral project remake
 Coin Apocalypse clone for a school project using JavaFX, FXML and JDBC.
 
-### Used technologies 
+![CoinApocalypseTitle](/CoinApocalypse/src/main/resources/img/menu/CoinApocalypse.png?raw=true "Coin Apocalypse Redux Logo")
+
+## About
+This project is my take at a game called _**Coin Apocalypse**_[^1] by small independent dev Drakensang. Unfortunately, the original of this game doesn't work at this time because it was developed with Adobe Flash platform - which isn't supported nowadays. 
+
+_**CoinApocalypse-Redux**_ is as a Semestral project created by me for a class called "Programming in Java I". Students should learn the basics of Java (OOP, Collections, Libraries, Databases and basics of networking) and therefore our goal was to make a simple "8-Bit-like" game, that would focus on those aspects. Hence this is my firt Java project (my background is in C++), this might not be perfect, but it is working.
+
+I'm going to work on this project throughout my career as I am certain that in the future I will be more and more embarrased by the codebase I've just released - and that's someting, no programmer wishes to have. Bad - but working - codebase that is public. :)  
+
+Feel free to inspire yourself and if need be, comment and objectively critize. 
+
+## Used technologies 
 - Maven (updating and downloading necessary libraries)
 - JavaFX (application and graphics rendering)
      - FXML (layout of the application GUI)
@@ -9,23 +20,34 @@ Coin Apocalypse clone for a school project using JavaFX, FXML and JDBC.
 - JDBC
 
 #### Additional
-- Some of the knowledge about old 8-bit games[^1]
+- Some of the knowledge about old 8-bit games[^2]
 - Game patterns based on a book called [Game design patterns](https://gameprogrammingpatterns.com/contents.html)
 
-#### Finished tasks
-- [ ] Finish battling 
-- [ ] Nice done
-- [ ] Graphical user interface
-- [ ] Gamelogic
-- [ ] Points for a development academy
-- [x] \(Optional) Nice things to have
+## Finished tasks
+##### Design patterns
+- [ ] Class layouts, inhertiances and statics
+- [X] JavaFX GUI controllers
+##### Graphics
+- [ ] Sprites, Animated sprites
+- [X] Graphical user interface using FXML
+- [ ] Graphical user interface styling using CSS
+##### Sounds
+- [X] Sound design
+- [X] Sound implementaion
+##### Gameloop
+- [X] Physics (/w screen boundariy triggers - entities, player, etc.)
+- [ ] Victory conditionals
+- [ ] Player upgrade implementation
+- [x] \(Optional) Statistics using in-memory database (JDBC)
 
-### About
-This project is 
+## Design Patterns
+
+## Graphics
+
+## Sounds
+
+## Gameloop
 
 
- Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam egestas wisi a erat. Suspendisse nisl. Proin pede metus, vulputate nec, fermentum fringilla, vehicula vitae, justo. Curabitur ligula sapien, pulvinar a vestibulum quis, facilisis vel sapien. In convallis. Donec quis nibh at felis congue commodo. Donec ipsum massa, ullamcorper in, auctor et, scelerisque sed, est. Nulla est. Aliquam erat volutpat. Fusce tellus odio, dapibus id fermentum quis, suscipit id erat. Praesent vitae arcu tempor neque lacinia pretium. Fusce dui leo, imperdiet in, aliquam sit amet, feugiat eu, orci. Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis quis, sem. Maecenas aliquet accumsan leo.
-
-Mauris elementum mauris vitae tortor. Etiam bibendum elit eget erat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris metus. Donec ipsum massa, ullamcorper in, auctor et, scelerisque sed, est. Nullam eget nisl. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis sapien nunc, commodo et, interdum suscipit, sollicitudin et, dolor. Cras pede libero, dapibus nec, pretium sit amet, tempor quis. Cras elementum. Mauris dolor felis, sagittis at, luctus sed, aliquam non, tellus. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Praesent dapibus. Aenean fermentum risus id tortor. Pellentesque pretium lectus id turpis. Etiam quis quam. Praesent in mauris eu tortor porttitor accumsan. 
-
-[^1]: Great sources of information are youtube videos about how the games worked back in the 00's. For instatnce youtubers like Bisqwit and The 8-Bit Guy have great collection of videos about this kind of topic.
+[^1]: Gameplay: https://www.youtube.com/watch?v=w-SgjPvZOHk
+[^2]: Great sources of information are youtube videos about how the games worked back in the 00's. For instatnce youtubers like Bisqwit and The 8-Bit Guy have great collection about this kind of topic.
