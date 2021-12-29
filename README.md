@@ -69,6 +69,8 @@ public class Sound {
 }
 ```
 
+![ClassDiagram](/Screenshots/ClassDiagram.PNG?raw=true "ClassDiagram")
+
 ## Graphics
 ![SpriteSheet](/CoinApocalypse/src/main/resources/img/game/SpriteBook.png?raw=true "Sprite Sheet")
 
