@@ -69,4 +69,3 @@ public class Meteor extends Entity implements Collisionable{
 		return "meteor";
 	}
 }
-
