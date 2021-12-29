@@ -2,6 +2,8 @@ package CoinApocalypse;
 
 import javafx.scene.image.Image;
 
+// This is an example of a class, that is not static, but instanced - which, in this case, is rendundant. (School assigment.)
+
 @SuppressWarnings("exports")
 public class Art {
 	public static final int DEF_TILE_WIDTH = 32;
