@@ -4,12 +4,11 @@ package CoinApocalypse.game.entities;
 import java.util.List;
 
 import CoinApocalypse.Art;
-import CoinApocalypse.Art.Sprite;
+import CoinApocalypse.Sprite;
 import CoinApocalypse.Sound;
 import CoinApocalypse.game.Game;
 import CoinApocalypse.game.PlayerState;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 
 public class Player extends Entity {

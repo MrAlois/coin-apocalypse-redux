@@ -6,44 +6,6 @@ import javafx.scene.image.Image;
 public class Art {
 	public static final int DEF_TILE_WIDTH = 32;
 	
-	public class Sprite{
-		private int frame = 0;
-		private int row, maxCols;
-		private int animStartTick = 0;
-		private Image spriteBook;
-		
-		public Sprite(int row, int maxCols, Image spriteBook) {
-			this.row = row;
-			this.maxCols = maxCols;
-			this.spriteBook = spriteBook;
-		}
-		
-		public void animate(double delay, int tick) {
-			if(animStartTick == 0) animStartTick = tick;
-			
-			if(tick - animStartTick > delay) {
-				animStartTick = tick;
-				
-				if(frame + 1 < maxCols) 
-					frame++;
-				else
-					frame = 0;
-				
-				animStartTick = 0;
-			}
-		}
-		
-		public double getSpriteBookOffsetX() {
-			return frame * DEF_TILE_WIDTH;
-		}
-		
-		public double getSpriteBookOffsetY() {
-			return row * DEF_TILE_WIDTH;
-		}
-		
-		public Image getSpriteBook() { return spriteBook; }
-	}
-	
 	private final Image spriteBook = new Image("file:src/main/resources/img/game/SpriteBook.png");
 	
 	public final Image game_background = new Image("file:src/main/resources/img/game/Background.png");
