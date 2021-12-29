@@ -25,8 +25,10 @@ Feel free to inspire yourself and if need be, comment and objectively critize.
 
 ## Finished tasks
 ##### Design patterns
-- [ ] Class layouts, inhertiances and statics
+- [X] Class layouts, inhertiances
 - [X] JavaFX GUI controllers
+- [ ] Gampeplay optimalization
+- [X] Rendering optimalization
 ##### Graphics
 - [ ] Sprites, Animated sprites
 - [X] Graphical user interface using FXML
@@ -37,8 +39,8 @@ Feel free to inspire yourself and if need be, comment and objectively critize.
 ##### Gameloop
 - [X] Physics (/w screen boundariy triggers - entities, player, etc.)
 - [ ] Victory conditionals
-- [ ] Player upgrade implementation
-- [x] \(Optional) Statistics using in-memory database (JDBC)
+- [X] Player upgrade implementation
+- [ ] \(Optional) Statistics using in-memory database (JDBC)
 
 ## Design Patterns
 
