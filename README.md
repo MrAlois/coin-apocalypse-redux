@@ -1,5 +1,5 @@
-# Coin Apocalypse - Semestral project remake
-Coin Apocalypse clone for a school project using JavaFX, FXML and JDBC.
+# Coin Apocalypse - Java clone
+_Coin Apocalypse clone for a school project using JavaFX, FXML and JDBC._
 
 ![CoinApocalypseTitle](/CoinApocalypse/src/main/resources/img/menu/CoinApocalypse.png?raw=true "Coin Apocalypse Redux Logo")
 
