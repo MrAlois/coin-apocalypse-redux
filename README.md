@@ -6,7 +6,7 @@ _Coin Apocalypse clone for a school project using JavaFX, FXML and JDBC._
 ## About
 This project is my take at a clone of a game called _**Coin Apocalypse**_[^1] by small independent dev Drakensang. Unfortunately, the original of this game doesn't work at this time because it was developed on Adobe Flash platform - which isn't supported nowadays. 
 
-_**CoinApocalypse-Redux**_ is as a Semestral project created by me for a class called "Programming in Java I". Students should learn the basics of Java (OOP, Collections, Libraries, Databases and basics of networking) and therefore our goal was to make a simple "8-Bit-like" game, that would focus on those aspects. Hence this is my first Java project (my background is in C++), this might not be perfect, but it is working.
+_**CoinApocalypse-Redux**_ is as a Semestral project created for a class called "Programming in Java I". Students should learn the basics of Java (OOP, Collections, Libraries, Databases and basics of networking) and therefore our goal was to make a simple "8-Bit-like" game, that would focus on those aspects.
 
 I'm going to work on this project throughout my career as I am certain that in the future I will be more and more embarrased by the codebase I've just released - and that's someting, no programmer wishes to have. Bad - but working - codebase (especially that is public). :)  
 
@@ -42,6 +42,17 @@ Feel free to inspire yourself and if need be, comment and objectively critize.
 - [ ] Victory conditionals
 - [X] Player upgrade implementation
 - [ ] \(Optional) Statistics using in-memory database (JDBC)
+
+## v2.0 progress
+- [ ] Client-Server architecture with REST
+- [ ] Persistent data saved using JPA
+- [ ] Log integration using log4j2
+- [ ] CompletableFuture
+- [ ] Multi-lang support
+- [ ] Lombok
+- [ ] Using Date
+- [ ] Streams and Lambda expressions
+- [ ] Buildable using Maven (exports runnable .jar or equivalent)
 
 ## Graphics
 This game uses so-called Sprite Book. It's a file, that is on a grid of constant lenghth (32px in this case). The Sprite book contains every frame of an drawable Entity, that is in the game (except for buttons, menus and in the future, the upgrades).
