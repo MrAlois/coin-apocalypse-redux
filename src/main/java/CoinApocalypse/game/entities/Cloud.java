@@ -1,6 +1,6 @@
 package CoinApocalypse.game.entities;
 
-import CoinApocalypse.Art;
+import CoinApocalypse.graphics.Art;
 import CoinApocalypse.game.Game;
 import javafx.scene.canvas.GraphicsContext;
 

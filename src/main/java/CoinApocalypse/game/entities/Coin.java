@@ -1,8 +1,8 @@
 package CoinApocalypse.game.entities;
 
 
-import CoinApocalypse.Art;
-import CoinApocalypse.Sound;
+import CoinApocalypse.graphics.Art;
+import CoinApocalypse.game.Sound;
 import CoinApocalypse.game.Game;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.canvas.GraphicsContext;

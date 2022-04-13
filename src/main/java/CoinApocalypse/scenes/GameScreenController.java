@@ -6,7 +6,6 @@ import java.util.LinkedList;
 import java.util.ResourceBundle;
 
 import CoinApocalypse.App;
-import CoinApocalypse.Sound;
 import CoinApocalypse.game.Game;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -15,7 +14,6 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.VBox;
 
 public class GameScreenController implements Initializable{
 	

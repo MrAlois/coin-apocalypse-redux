@@ -3,7 +3,7 @@ package CoinApocalypse.scenes;
 import java.io.IOException;
 
 import CoinApocalypse.App;
-import CoinApocalypse.Sound;
+import CoinApocalypse.game.Sound;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

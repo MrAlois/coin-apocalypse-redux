@@ -1,4 +1,4 @@
-package CoinApocalypse;
+package CoinApocalypse.game;
 
 import java.io.File;
 

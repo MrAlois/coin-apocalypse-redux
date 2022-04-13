@@ -1,4 +1,4 @@
-package CoinApocalypse;
+package CoinApocalypse.graphics;
 
 import javafx.scene.image.Image;
 

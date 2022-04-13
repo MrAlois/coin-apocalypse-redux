@@ -9,4 +9,6 @@ module gamedev.CoinApocalypse {
     opens CoinApocalypse.scenes to javafx.fxml;
     exports CoinApocalypse;
     exports CoinApocalypse.scenes;
+    exports CoinApocalypse.graphics;
+    exports CoinApocalypse.game;
 }

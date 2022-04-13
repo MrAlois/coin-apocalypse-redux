@@ -3,9 +3,9 @@ package CoinApocalypse.game.entities;
 
 import java.util.List;
 
-import CoinApocalypse.Art;
-import CoinApocalypse.Sprite;
-import CoinApocalypse.Sound;
+import CoinApocalypse.graphics.Art;
+import CoinApocalypse.graphics.Sprite;
+import CoinApocalypse.game.Sound;
 import CoinApocalypse.game.Game;
 import CoinApocalypse.game.PlayerState;
 import javafx.scene.canvas.GraphicsContext;

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 import CoinApocalypse.App;
-import CoinApocalypse.Art;
+import CoinApocalypse.graphics.Art;
 import CoinApocalypse.game.entities.Cloud;
 import CoinApocalypse.game.entities.Coin;
 import CoinApocalypse.game.entities.Collisionable;
