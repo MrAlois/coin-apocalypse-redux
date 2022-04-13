@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import cz.asenk.vsb.coinapocalypse.App;
+import cz.asenk.vsb.coinapocalypse.Application;
 import cz.asenk.vsb.coinapocalypse.game.Sound;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,7 +26,7 @@ public class InstructionScreenController implements Initializable{
     	Sound.click.play();
     	
     	if(event.getSource() == button_menu) {
-    		App.setRoot("menu_screen");
+    		Application.setRoot("menu_screen");
     	}
     }
 

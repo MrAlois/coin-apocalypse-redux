@@ -5,7 +5,7 @@ import java.net.URL;
 import java.util.LinkedList;
 import java.util.ResourceBundle;
 
-import cz.asenk.vsb.coinapocalypse.App;
+import cz.asenk.vsb.coinapocalypse.Application;
 import cz.asenk.vsb.coinapocalypse.game.Game;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -58,7 +58,7 @@ public class GameScreenController implements Initializable{
 			if(key.getCode() == KeyCode.ESCAPE) {
 				try {
 					game.exit();
-					App.setRoot("upgrade_screen");
+					Application.setRoot("upgrade_screen");
 				} catch (IOException e) {;
 					e.printStackTrace();
 				}

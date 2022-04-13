@@ -8,7 +8,4 @@ module gamedev.CoinApocalypse {
 
     opens cz.asenk.vsb.coinapocalypse.scenes to javafx.fxml;
     exports cz.asenk.vsb.coinapocalypse;
-    exports cz.asenk.vsb.coinapocalypse.scenes;
-    exports cz.asenk.vsb.coinapocalypse.graphics;
-    exports cz.asenk.vsb.coinapocalypse.game;
 }

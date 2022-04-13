@@ -32,7 +32,6 @@
 	-fx-background-image: url('/img/menu/Background.png');
 	-fx-background-position: center center;
 	-fx-background-size: stretch stretch;
-
 	-fx-background-color: #97ab59;	
 	-fx-tab-min-width: 4em;
 }

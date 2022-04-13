@@ -4,19 +4,14 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import cz.asenk.vsb.coinapocalypse.App;
+import cz.asenk.vsb.coinapocalypse.Application;
 import cz.asenk.vsb.coinapocalypse.game.Sound;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundImage;
-import javafx.scene.layout.BackgroundPosition;
-import javafx.scene.layout.BackgroundRepeat;
-import javafx.scene.layout.BackgroundSize;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 
 public class MenuController implements Initializable{
 	@FXML
@@ -35,27 +30,27 @@ public class MenuController implements Initializable{
     	Sound.click.play();
     	
     	if(event.getSource() == button_play) {
-    		App.setRoot("game_screen");
+    		Application.setRoot("game_screen");
     	}
     	
     	if(event.getSource() == button_upgrade) {
-    		App.setRoot("upgrade_screen");
+    		Application.setRoot("upgrade_screen");
     	}
     	
     	if(event.getSource() == button_about) {
-    		App.setRoot("about_screen");
+    		Application.setRoot("about_screen");
     	}
     	
     	if(event.getSource() == button_statistics) {
-    		App.setRoot("statistics_screen");
+    		Application.setRoot("statistics_screen");
     	}
     	
     	if(event.getSource() == button_instructions) {
-    		App.setRoot("instruction_screen");
+    		Application.setRoot("instruction_screen");
     	}
     	
     	if(event.getSource() == button_exit) {
-    		App.exitApp();
+    		Application.exitApp();
     	}
     }
 

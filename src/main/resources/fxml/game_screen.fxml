@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-
 <VBox fx:id="game_vbox" alignment="TOP_CENTER" prefHeight="800.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.asenk.vsb.coinapocalypse.scenes.GameScreenController">
    <children>
       <HBox alignment="TOP_CENTER" minWidth="1024.0" prefHeight="50.0" prefWidth="1024.0">
