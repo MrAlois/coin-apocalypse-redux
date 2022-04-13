@@ -10,26 +10,24 @@ import javafx.scene.control.Button;
 
 public class UpgradeController {
 	@FXML
-	private Button button_play, button_menu, button_back, button_next;
+	private Button fxmlButtonPlay;
+	@FXML
+	private Button fxmlButtonMenu;
+	@FXML
+	private Button fxmlButtonBack;
+	@FXML
+	private Button fxmlButtonNext;
 	
     @FXML
     private void handleButton(ActionEvent event) throws IOException {
     	Sound.click.play();
     	
-    	if(event.getSource() == button_play) {
+    	if(event.getSource() == fxmlButtonPlay) {
     		JavaFxApplication.setRoot("game_screen");
     	}
     	
-    	if(event.getSource() == button_menu) {
+    	if(event.getSource() == fxmlButtonMenu) {
     		JavaFxApplication.setRoot("menu_screen");
-    	}
-    	
-    	if(event.getSource() == button_back) {
-    		
-    	}
-    	
-    	if(event.getSource() == button_next) {
-    		
     	}
     }
 }

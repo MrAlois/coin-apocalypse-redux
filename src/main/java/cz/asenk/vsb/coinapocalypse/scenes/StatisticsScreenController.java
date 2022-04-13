@@ -10,13 +10,13 @@ import javafx.scene.control.Button;
 
 public class StatisticsScreenController {
 	@FXML
-	private Button button_menu;
+	private Button fxmlButtonMenu;
 	
     @FXML
     private void handleButton(ActionEvent event) throws IOException {
     	Sound.click.play();
     	
-    	if(event.getSource() == button_menu) {
+    	if(event.getSource() == fxmlButtonMenu) {
     		JavaFxApplication.setRoot("menu_screen");
     	}
     }

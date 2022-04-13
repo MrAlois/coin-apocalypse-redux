@@ -16,7 +16,7 @@ import javafx.scene.image.ImageView;
 
 public class AboutScreenController implements Initializable {
 	@FXML
-	private Button button_menu;
+	private Button fxmlButtonMenu;
 	
 	@FXML
 	private ImageView imageview;
@@ -24,7 +24,7 @@ public class AboutScreenController implements Initializable {
     @FXML
     private void handleButton(ActionEvent event) throws IOException {
     	Sound.click.play();
-    	if(event.getSource() == button_menu) {
+    	if(event.getSource() == fxmlButtonMenu) {
     		JavaFxApplication.setRoot("menu_screen");
     	}
     }

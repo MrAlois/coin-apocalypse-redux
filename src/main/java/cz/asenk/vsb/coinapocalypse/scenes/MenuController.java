@@ -15,41 +15,46 @@ import javafx.scene.layout.*;
 
 public class MenuController implements Initializable{
 	@FXML
-	private Button button_play, button_upgrade, button_about, button_statistics, button_instructions, button_exit;
+	private Button fxmlButtonPlay;
+	@FXML
+	private Button fxmlButtonUpgrade;
+	@FXML
+	private Button fxmlButtonAbout;
+	@FXML
+	private Button fxmlButtonStatistics;
+	@FXML
+	private Button fxmlButtonInstructions;
+	@FXML
+	private Button fxmlButtonExit;
 	
 	@FXML
-	VBox vbox_main;
-	
-	public MenuController(){
-		
-		
-	}
+	VBox fxmlVboxMain;
 		
     @FXML
     private void handleButtons(ActionEvent event) throws IOException {
     	Sound.click.play();
     	
-    	if(event.getSource() == button_play) {
+    	if(event.getSource() == fxmlButtonPlay) {
     		JavaFxApplication.setRoot("game_screen");
     	}
     	
-    	if(event.getSource() == button_upgrade) {
+    	if(event.getSource() == fxmlButtonUpgrade) {
     		JavaFxApplication.setRoot("upgrade_screen");
     	}
     	
-    	if(event.getSource() == button_about) {
+    	if(event.getSource() == fxmlButtonAbout) {
     		JavaFxApplication.setRoot("about_screen");
     	}
     	
-    	if(event.getSource() == button_statistics) {
+    	if(event.getSource() == fxmlButtonStatistics) {
     		JavaFxApplication.setRoot("statistics_screen");
     	}
     	
-    	if(event.getSource() == button_instructions) {
+    	if(event.getSource() == fxmlButtonInstructions) {
     		JavaFxApplication.setRoot("instruction_screen");
     	}
     	
-    	if(event.getSource() == button_exit) {
+    	if(event.getSource() == fxmlButtonExit) {
     		JavaFxApplication.exitApp();
     	}
     }
@@ -59,8 +64,8 @@ public class MenuController implements Initializable{
 		BackgroundImage bi = new BackgroundImage(new Image("file:src/main/resources/img/menu/MenuBackground.png", true), 
 				BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT,
 				BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
-		vbox_main.setBackground(new Background(bi));
+		fxmlVboxMain.setBackground(new Background(bi));
 		
-		button_play.getStyleClass().add("myButton");
+		fxmlButtonPlay.getStyleClass().add("myButton");
 	}
 }

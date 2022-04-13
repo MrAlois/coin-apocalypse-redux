@@ -2,7 +2,7 @@ package cz.asenk.vsb.coinapocalypse.game;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.List;
 
 import cz.asenk.vsb.coinapocalypse.JavaFxApplication;
 import cz.asenk.vsb.coinapocalypse.game.entities.*;
@@ -12,7 +12,9 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class Game {
 	public static final int CANVAS_WIDTH = 1024;
 	public static final int CANVAS_HEIGHT = 750 ;
@@ -23,27 +25,31 @@ public class Game {
 	private boolean isPaused = false;
 	
 	private Player player;
-	private ArrayList<Cloud> cloudList = new ArrayList<>();
-	private ArrayList<Coin> coinList = new ArrayList<>();
-	private ArrayList<Meteor> meteorList = new ArrayList<>();
-	private ArrayList<Collisionable> collisionables = new ArrayList<>();
-	private ArrayList<Drawable> drawables = new ArrayList<>();
+	private final List<Cloud> cloudList = new ArrayList<>();
+	private final List<Coin> coinList = new ArrayList<>();
+	private final List<Meteor> meteorList = new ArrayList<>();
+	private final List<Collisionable> collisionables = new ArrayList<>();
+	private final List<Drawable> drawables = new ArrayList<>();
 	
-	private LinkedList<KeyCode> keysPressed;
+	private final List<KeyCode> keysPressed;
 	
-	private Label label_score, label_coins;
+	private Label labelScore;
+	private Label labelCoins;
 	
-	private int score = 0, coins = 0, coinMultiplier = 1, tick = 0;
+	private int score = 0;
+	private int coins = 0;
+	private int coinMultiplier = 1;
+	private int tick = 0;
 	private double gameDifficulty = 1; 
 	private Art artbook;
 	
 	private long startTime;
-	
-	public Game(GraphicsContext gc, LinkedList<KeyCode> keysPressed) {
+
+	public Game(GraphicsContext gc, List<KeyCode> keysPressed) {
 		this.gc = gc;
 		this.keysPressed = keysPressed;
 	}
-	
+
 	public void start() {
 		this.startTime = System.currentTimeMillis();
 		
@@ -115,16 +121,16 @@ public class Game {
 	}
 	
 	public void setScoreLabel(Label label) {
-		this.label_score = label;
+		this.labelScore = label;
 	}
 	
 	public void setCoinLabel(Label label) {
-		this.label_coins = label;
+		this.labelCoins = label;
 	}
 		
 	private void draw() {		
 		// Background
-		gc.drawImage(artbook.game_background, 0, 0);
+		gc.drawImage(artbook.imgGameBackground, 0, 0);
 				
 		for(Drawable d : drawables) {
 			d.draw(gc);
@@ -133,12 +139,11 @@ public class Game {
 	
 	private void update(double deltaT) {
 		// Score
-		label_score.setText(String.format("Score: %d", score));
-		label_coins.setText(String.format("Coins(x%d): %d", coinMultiplier, coins));
+		labelScore.setText(String.format("Score: %d", score));
+		labelCoins.setText(String.format("Coins(x%d): %d", coinMultiplier, coins));
 		
-		score = (int) (tick * coinMultiplier);
-		
-		//TODO Collections update
+		score = tick * coinMultiplier;
+
 		player.update(deltaT, tick);
 		
 		for(Cloud c : cloudList)
@@ -154,22 +159,19 @@ public class Game {
 		checkGameDifficulty();
 	}	
 	
-	private void checkPlayerIntersection() {	
-		for(Collisionable c : collisionables) {
+	private void checkPlayerIntersection() {
+		collisionables.forEach( c -> {
 			Collisionable i = c.intersects(player.getBoundary());
-			
-			if(i != null) {
-				switch(i.getName()) {
-					case "coin":
-						coins += 1 * coinMultiplier;	// Sound event and relocating of the coin is done in inside the class
-						break;
-						
-					case "meteor":
-						isRunning = false;
-						break;
-				}
-			}		
-		}
+
+			if(i == null)
+				return;
+
+			if(i.getName().equals("coin"))
+				coins += coinMultiplier;	// Sound event and relocating of the coin is done in inside the class
+
+			if(i.getName().equals("meteor"))
+				isRunning = false;
+		});
 	}
 	
 	private void checkGameDifficulty() {
@@ -201,7 +203,6 @@ public class Game {
 	}
 	
 	private void loseGame() {
-		
 		// Death animation
 		for(double x = 0; x < CANVAS_WIDTH; x += 0.01 ) {			
 			gc.setFill(Color.BLACK);
@@ -211,14 +212,11 @@ public class Game {
 		
 		exit();
 		
-		//TODO Insert gamedev
-		//TODO GameOver screen
-		
 		try {
 			Thread.sleep(1500);
 			JavaFxApplication.setRoot("upgrade_screen");
 		} catch (IOException | InterruptedException e) {
-			e.printStackTrace();
+			log.error(e.getMessage());
 		}
 	}
 	

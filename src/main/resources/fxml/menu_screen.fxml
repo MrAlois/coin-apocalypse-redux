@@ -6,7 +6,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<VBox styleClass="menu_section" fx:id="vbox_main" alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1024.0" scaleShape="false" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.asenk.vsb.coinapocalypse.scenes.MenuController">
+<VBox styleClass="menu_section" fx:id="fxmlVboxMain" alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1024.0" scaleShape="false" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.asenk.vsb.coinapocalypse.scenes.MenuController">
    <children>
       <ImageView fx:id="imgMenuLogo" disable="true" pickOnBounds="true" smooth="false" visible="false">
          <VBox.margin>
@@ -20,7 +20,7 @@
          <children>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="300.0">
                <children>
-                  <Button fx:id="button_statistics" alignment="CENTER" mnemonicParsing="false" onAction="#handleButtons" prefHeight="20.0" prefWidth="200.0" text="Statistics">
+                  <Button fx:id="fxmlButtonStatistics" alignment="CENTER" mnemonicParsing="false" onAction="#handleButtons" prefHeight="20.0" prefWidth="200.0" text="Statistics">
                      <font>
                         <Font name="Bodoni MT Condensed" size="22.0" />
                      </font>
@@ -28,7 +28,7 @@
                         <Insets bottom="20.0" top="20.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="button_instructions" alignment="CENTER" mnemonicParsing="false" onAction="#handleButtons" prefHeight="20.0" prefWidth="200.0" text="Instructions">
+                  <Button fx:id="fxmlButtonInstructions" alignment="CENTER" mnemonicParsing="false" onAction="#handleButtons" prefHeight="20.0" prefWidth="200.0" text="Instructions">
                      <font>
                         <Font name="Bodoni MT Condensed" size="22.0" />
                      </font>
@@ -43,7 +43,7 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="300.0">
                <children>
-                  <Button fx:id="button_upgrade" alignment="CENTER" mnemonicParsing="false" onAction="#handleButtons" prefHeight="20.0" prefWidth="200.0" text="Upgrade">
+                  <Button fx:id="fxmlButtonUpgrade" alignment="CENTER" mnemonicParsing="false" onAction="#handleButtons" prefHeight="20.0" prefWidth="200.0" text="Upgrade">
                      <font>
                         <Font name="Bodoni MT Condensed" size="22.0" />
                      </font>
@@ -51,7 +51,7 @@
                         <Insets bottom="20.0" top="20.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="button_play" alignment="CENTER" onAction="#handleButtons" prefHeight="20.0" prefWidth="200.0" text="Play">
+                  <Button fx:id="fxmlButtonPlay" alignment="CENTER" onAction="#handleButtons" prefHeight="20.0" prefWidth="200.0" text="Play">
                      <VBox.margin>
                         <Insets bottom="20.0" top="20.0" />
                      </VBox.margin>
@@ -66,7 +66,7 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="300.0">
                <children>
-                  <Button fx:id="button_about" alignment="CENTER" mnemonicParsing="false" onAction="#handleButtons" prefHeight="20.0" prefWidth="200.0" text="About">
+                  <Button fx:id="fxmlButtonAbout" alignment="CENTER" mnemonicParsing="false" onAction="#handleButtons" prefHeight="20.0" prefWidth="200.0" text="About">
                      <font>
                         <Font name="Bodoni MT Condensed" size="22.0" />
                      </font>
@@ -74,7 +74,7 @@
                         <Insets bottom="20.0" top="20.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="button_exit" alignment="CENTER" mnemonicParsing="false" onAction="#handleButtons" prefHeight="20.0" prefWidth="200.0" text="Exit game">
+                  <Button fx:id="fxmlButtonExit" alignment="CENTER" mnemonicParsing="false" onAction="#handleButtons" prefHeight="20.0" prefWidth="200.0" text="Exit game">
                      <font>
                         <Font name="Bodoni MT Condensed" size="22.0" />
                      </font>

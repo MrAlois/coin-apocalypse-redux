@@ -10,10 +10,12 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class Sound {
-	public static Sound hurt = loadSound("src/main/resources/snd/hitHurt.wav");
-	public static Sound jump = loadSound("src/main/resources/snd/jump.wav");
-	public static Sound coin = loadSound("src/main/resources/snd/pickupCoin.wav");
-	public static Sound click = loadSound("src/main/resources/snd/click.wav");
+	public static final Sound hurt = loadSound("src/main/resources/snd/hitHurt.wav");
+	public static final Sound jump = loadSound("src/main/resources/snd/jump.wav");
+	public static final Sound coin = loadSound("src/main/resources/snd/pickupCoin.wav");
+	public static final Sound click = loadSound("src/main/resources/snd/click.wav");
+
+	private Clip clip;
 
 	public static Sound loadSound(String fileName) {
 		Sound sound = new Sound();
@@ -29,8 +31,6 @@ public class Sound {
 		}
 		return sound;
 	}
-
-	private Clip clip;
 
 	public void play() {
 		try {

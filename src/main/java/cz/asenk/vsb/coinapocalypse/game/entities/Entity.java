@@ -3,14 +3,17 @@ package cz.asenk.vsb.coinapocalypse.game.entities;
 
 import javafx.geometry.Rectangle2D;
 
-abstract public class Entity implements Drawable {
-	protected double positionX, positionY;    
-    protected double velocityX, velocityY;
-    protected double width, height;
+public abstract class Entity implements Drawable {
+	protected double positionX;
+    protected double positionY;
+    protected double velocityX;
+    protected double velocityY;
+    protected double width;
+    protected double height;
         
     public abstract void update(double deltaT, int tick);
     
-    public Entity() {
+    protected Entity() {
         positionX = 0;
         positionY = 0;    
         velocityX = 0;

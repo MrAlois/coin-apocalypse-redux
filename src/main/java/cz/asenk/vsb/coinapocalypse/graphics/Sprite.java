@@ -3,10 +3,12 @@ package cz.asenk.vsb.coinapocalypse.graphics;
 import javafx.scene.image.Image;
 
 public class Sprite{
-	private int frame = 0;
-	private int row, maxCols;
+	private final int row;
+	private final int maxCols;
+	private final Image spriteBook;
+
 	private int animStartTick = 0;
-	private Image spriteBook;
+	private int frame = 0;
 	
 	public Sprite(int row, int maxCols, Image spriteBook) {
 		this.row = row;
