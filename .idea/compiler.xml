@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="coin-apocalypse" />
+        <module name="java-game-CoinApocalypse" />
       </profile>
     </annotationProcessing>
   </component>
