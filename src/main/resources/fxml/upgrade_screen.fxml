@@ -89,14 +89,14 @@
       </TabPane>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button fx:id="button_back" mnemonicParsing="false" onAction="#handleButton" text="Prev" />
-            <Button fx:id="button_next" mnemonicParsing="false" onAction="#handleButton" text="Next" />
+            <Button fx:id="fxmlButtonBack" mnemonicParsing="false" onAction="#handleButton" text="Prev" />
+            <Button fx:id="fxmlButtonNext" mnemonicParsing="false" onAction="#handleButton" text="Next" />
          </children>
       </HBox>
       <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button fx:id="button_play" mnemonicParsing="false" onAction="#handleButton" text="Play Again" />
-            <Button fx:id="button_menu" mnemonicParsing="false" onAction="#handleButton" text="Main Menu" />
+            <Button fx:id="fxmlButtonPlay" mnemonicParsing="false" onAction="#handleButton" text="Play Again" />
+            <Button fx:id="fxmlButtonMenu" mnemonicParsing="false" onAction="#handleButton" text="Main Menu" />
          </children>
       </HBox>
    </children>

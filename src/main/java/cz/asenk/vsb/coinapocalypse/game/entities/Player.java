@@ -16,15 +16,15 @@ public class Player extends Entity {
 	public static final double PLAYER_ANIMATION_TIME = 30;
 	public static final double PLAYER_MAX_JUMP = 230;
 	public static final double PLAYER_INITIAL_JUMP_STRENGTH = 50;
-	//public static final double PLAYER_JUMP_STEP = 2;
 	
 	public static final int PLAYER_DEF_WIDTH = 64;
 	public static final int PLAYER_DEF_HEIGHT = 64;
-	
+
+	private final Art art;
+
 	private PlayerState state;
-	private Art art;
 	private boolean isJumping = false;
-	private boolean isAtJumpMaximum = false;;
+	private boolean isAtJumpMaximum = false;
 	private List<KeyCode> keysPressed;
 	
 	private Sprite playerImage;
@@ -36,7 +36,7 @@ public class Player extends Entity {
 		this.positionX = 500;
 		this.positionY = PLAYER_BASELINE;
 		
-		this.playerImage = art.player_right;
+		this.playerImage = art.spritePlayerRight;
 		this.state = PlayerState.STOPPED;
 	}
 	
@@ -75,18 +75,20 @@ public class Player extends Entity {
 		// Check player current situation & change animation accordingly
 		if(velocityX < -0.1) { 
 			setState(PlayerState.MOVING_LEFT);
-			playerImage = art.player_left;
+			playerImage = art.spritePlayerLeft;
 			playerImage.animate(10, tick);
 		}
 		    			
 		if(velocityX > 0.1){
 			setState(PlayerState.MOVING_RIGHT);
-			playerImage = art.player_right;
+			playerImage = art.spritePlayerRight;
 			playerImage.animate(10, tick);
 		}
 		
-		if(velocityY != 0) setState(PlayerState.JUMPING); else
-		if(velocityX < 0.3 && getVelocityX() > -0.3) setState(PlayerState.STOPPED);
+		if(velocityY != 0)
+			setState(PlayerState.JUMPING);
+		if(velocityX < 0.3 && getVelocityX() > -0.3)
+			setState(PlayerState.STOPPED);
 		
 		// Jumping logic
 		if(isJumping) {
