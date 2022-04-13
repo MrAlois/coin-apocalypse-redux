@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/java-game-CoinApocalypse.iml" filepath="$PROJECT_DIR$/.idea/java-game-CoinApocalypse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/coin-apocalypse.iml" filepath="$PROJECT_DIR$/.idea/coin-apocalypse.iml" />
     </modules>
   </component>
 </project>

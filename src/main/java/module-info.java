@@ -6,9 +6,9 @@ module gamedev.CoinApocalypse {
 	requires java.desktop;
 	requires java.sql;
 
-    opens CoinApocalypse.scenes to javafx.fxml;
-    exports CoinApocalypse;
-    exports CoinApocalypse.scenes;
-    exports CoinApocalypse.graphics;
-    exports CoinApocalypse.game;
+    opens cz.asenk.vsb.coinapocalypse.scenes to javafx.fxml;
+    exports cz.asenk.vsb.coinapocalypse;
+    exports cz.asenk.vsb.coinapocalypse.scenes;
+    exports cz.asenk.vsb.coinapocalypse.graphics;
+    exports cz.asenk.vsb.coinapocalypse.game;
 }
