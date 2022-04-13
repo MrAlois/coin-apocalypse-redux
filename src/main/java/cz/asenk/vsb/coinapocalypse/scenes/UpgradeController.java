@@ -2,7 +2,7 @@ package cz.asenk.vsb.coinapocalypse.scenes;
 
 import java.io.IOException;
 
-import cz.asenk.vsb.coinapocalypse.Application;
+import cz.asenk.vsb.coinapocalypse.JavaFxApplication;
 import cz.asenk.vsb.coinapocalypse.game.Sound;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,11 +17,11 @@ public class UpgradeController {
     	Sound.click.play();
     	
     	if(event.getSource() == button_play) {
-    		Application.setRoot("game_screen");
+    		JavaFxApplication.setRoot("game_screen");
     	}
     	
     	if(event.getSource() == button_menu) {
-    		Application.setRoot("menu_screen");
+    		JavaFxApplication.setRoot("menu_screen");
     	}
     	
     	if(event.getSource() == button_back) {

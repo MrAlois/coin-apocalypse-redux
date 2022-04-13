@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-import cz.asenk.vsb.coinapocalypse.Application;
+import cz.asenk.vsb.coinapocalypse.JavaFxApplication;
 import cz.asenk.vsb.coinapocalypse.game.entities.*;
 import cz.asenk.vsb.coinapocalypse.graphics.Art;
 import javafx.animation.AnimationTimer;
@@ -216,7 +216,7 @@ public class Game {
 		
 		try {
 			Thread.sleep(1500);
-			Application.setRoot("upgrade_screen");
+			JavaFxApplication.setRoot("upgrade_screen");
 		} catch (IOException | InterruptedException e) {
 			e.printStackTrace();
 		}

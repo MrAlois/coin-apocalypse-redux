@@ -8,10 +8,7 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.canvas.GraphicsContext;
 
 public class Coin extends Entity implements Collisionable {
-	private final int minVelocity = 4;
-	private final int maxVelocity = 6;
-	
-	private Art art;
+	private final Art art;
 	
 	public Coin(Art art) {
 		this.art = art;
@@ -19,7 +16,9 @@ public class Coin extends Entity implements Collisionable {
 		this.height= Art.DEF_TILE_WIDTH;
 		
 		this.generateCoordinates();
-		
+
+		int minVelocity = 4;
+		int maxVelocity = 6;
 		this.velocityY = Math.random() * (maxVelocity - minVelocity) + minVelocity;
 	}
 		

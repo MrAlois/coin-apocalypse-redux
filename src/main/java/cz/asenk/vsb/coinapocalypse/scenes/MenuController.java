@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import cz.asenk.vsb.coinapocalypse.Application;
+import cz.asenk.vsb.coinapocalypse.JavaFxApplication;
 import cz.asenk.vsb.coinapocalypse.game.Sound;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -30,27 +30,27 @@ public class MenuController implements Initializable{
     	Sound.click.play();
     	
     	if(event.getSource() == button_play) {
-    		Application.setRoot("game_screen");
+    		JavaFxApplication.setRoot("game_screen");
     	}
     	
     	if(event.getSource() == button_upgrade) {
-    		Application.setRoot("upgrade_screen");
+    		JavaFxApplication.setRoot("upgrade_screen");
     	}
     	
     	if(event.getSource() == button_about) {
-    		Application.setRoot("about_screen");
+    		JavaFxApplication.setRoot("about_screen");
     	}
     	
     	if(event.getSource() == button_statistics) {
-    		Application.setRoot("statistics_screen");
+    		JavaFxApplication.setRoot("statistics_screen");
     	}
     	
     	if(event.getSource() == button_instructions) {
-    		Application.setRoot("instruction_screen");
+    		JavaFxApplication.setRoot("instruction_screen");
     	}
     	
     	if(event.getSource() == button_exit) {
-    		Application.exitApp();
+    		JavaFxApplication.exitApp();
     	}
     }
 
