@@ -7,9 +7,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="coin-apocalypse" />
         <module name="java-game-CoinApocalypse" />
+        <module name="coin-apocalypse.server" />
+        <module name="coin-apocalypse.client" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="capocalypse-server" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="capocalypse-server" options="-parameters" />
+      <module name="coin-apocalypse.server" options="" />
+    </option>
   </component>
 </project>

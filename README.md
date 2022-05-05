@@ -71,7 +71,7 @@ The longer the player survives in the game, the harder it becomes. Meteors will 
 
 The player can jump, and move left or right. In the future this will coded so that player can ugprade the speed, height, and control of the player.
 
-![Gameplay screenshot](/Screenshots/Gameplay1.PNG?raw=true "Gameplay")
+![Gameplay screenshot](/screenshots/Gameplay1.PNG?raw=true "Gameplay")
 
 ## Explanatory notes
 For auto-generated class diagram see [this](https://github.com/MrAlois/java-game-CoinApocalypse/blob/java-game-CoinApocalypse/Screenshots/ClassDiagram.png). _(WORK IN PROGRESS)_
