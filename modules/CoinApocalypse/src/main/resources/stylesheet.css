@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'Minecraft';
-	src: url('/main/resources/fonts/MinecraftFont.ttf');
+	src: url('/fonts/MinecraftFont.ttf');
 }
 
 .root{
@@ -12,24 +12,24 @@
 }
 
 .button {
-	-fx-background-image: url('/main/resources/img/menu/Button.png');
+	-fx-background-image: url('/img/menu/Button.png');
 	-fx-background-position: center center;
 	-fx-background-size: stretch stretch;
 	-fx-font-size: 22;
 }
 
 .button:hover {
-	-fx-background-image: url('/main/resources/img/menu/PressedButton.png');
+	-fx-background-image: url('/img/menu/PressedButton.png');
 }
 
 .menu_section{
-	-fx-background-image: url('/main/resources/img/menu/MenuBackground.png');
+	-fx-background-image: url('/img/menu/MenuBackground.png');
 	-fx-background-position: center center;
 	-fx-background-size: stretch stretch;
 }
 
 .upgrade_section{
-	-fx-background-image: url('/main/resources/img/menu/Background.png');
+	-fx-background-image: url('/img/menu/Background.png');
 	-fx-background-position: center center;
 	-fx-background-size: stretch stretch;
 	-fx-background-color: #97ab59;	

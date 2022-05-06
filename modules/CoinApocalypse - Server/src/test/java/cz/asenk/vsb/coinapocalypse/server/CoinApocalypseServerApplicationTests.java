@@ -9,5 +9,4 @@ class CoinApocalypseServerApplicationTests {
     @Test
     void contextLoads() {
     }
-
 }

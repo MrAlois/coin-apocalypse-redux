@@ -1,7 +1,7 @@
 # Coin Apocalypse - Java clone
 _Coin Apocalypse clone for a school project using JavaFX, FXML and JDBC._
 
-![CoinApocalypseTitle](/CoinApocalypse/src/main/resources/img/menu/CoinApocalypse.png?raw=true "Coin Apocalypse Redux Logo")
+![CoinApocalypseTitle](modules/CoinApocalypse/src/main/resources/img/menu/CoinApocalypse.png?raw=true "Coin Apocalypse Redux Logo")
 
 ## About
 This project is my take at a clone of a game called _**Coin Apocalypse**_[^1] by small independent dev Drakensang. Unfortunately, the original of this game doesn't work at this time because it was developed on Adobe Flash platform - which isn't supported nowadays. 
@@ -13,11 +13,15 @@ I'm going to work on this project throughout my career as I am certain that in t
 Feel free to inspire yourself and if need be, comment and objectively critize. 
 
 ## Used technologies 
+- Java 17
 - Maven (updating and downloading necessary libraries)
+- FXGL (JavaFX game library)
 - JavaFX (application and graphics rendering)
      - FXML (layout of the application GUI)
      - CSS (styling the GUI)
-- JDBC
+- JDBC (JPA)
+- SpringBoot
+- Project reactor
 
 #### Additional
 - [SceneBuiler](https://gluonhq.com/products/scene-builder/) for efficient FXML editing
@@ -57,7 +61,7 @@ Feel free to inspire yourself and if need be, comment and objectively critize.
 ## Graphics
 This game uses so-called Sprite Book. It's a file, that is on a grid of constant lenghth (32px in this case). The Sprite book contains every frame of an drawable Entity, that is in the game (except for buttons, menus and in the future, the upgrades).
 
-![SpriteSheet](/CoinApocalypse/src/main/resources/img/game/SpriteBook.png?raw=true "Sprite Sheet")
+![SpriteSheet](modules/CoinApocalypse/src/main/resources/img/game/SpriteBook.png?raw=true "Sprite Sheet")
 
 Every graphic component in the game is handled through **Art.java** class.
 
@@ -71,7 +75,7 @@ The longer the player survives in the game, the harder it becomes. Meteors will 
 
 The player can jump, and move left or right. In the future this will coded so that player can ugprade the speed, height, and control of the player.
 
-![Gameplay screenshot](/screenshots/Gameplay1.PNG?raw=true "Gameplay")
+![Gameplay screenshot](/screenshots/gameplay1.PNG?raw=true "Gameplay")
 
 ## Explanatory notes
 For auto-generated class diagram see [this](https://github.com/MrAlois/java-game-CoinApocalypse/blob/java-game-CoinApocalypse/Screenshots/ClassDiagram.png). _(WORK IN PROGRESS)_
