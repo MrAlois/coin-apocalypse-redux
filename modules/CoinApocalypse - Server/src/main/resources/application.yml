@@ -1,19 +1,20 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:3306/coinapocalypse
+    url: jdbc:mysql://localhost:3307/coinapo
     username: root
     password: root
-    driver-class-name: org.postgresql.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
   flyway:
     baselineOnMigrate: true
     locations: classpath:db/migration
   jpa:
+    open-in-view: false
     hibernate:
       ddl-auto: update
     generate-ddl: true
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQL9Dialect
+        dialect: org.hibernate.dialect.MySQL8Dialect
         jdbc:
           lob:
           non_contextual_creation: true
