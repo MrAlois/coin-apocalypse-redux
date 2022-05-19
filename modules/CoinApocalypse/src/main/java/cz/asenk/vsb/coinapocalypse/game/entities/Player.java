@@ -8,6 +8,8 @@ import cz.asenk.vsb.coinapocalypse.graphics.Art;
 import cz.asenk.vsb.coinapocalypse.graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
+import lombok.Data;
+import lombok.Getter;
 
 import java.util.List;
 
@@ -22,6 +24,8 @@ public class Player extends Entity {
 
 	private final Art art;
 
+	@Getter
+	private String name;
 	private PlayerState state;
 	private boolean isJumping = false;
 	private boolean isAtJumpMaximum = false;

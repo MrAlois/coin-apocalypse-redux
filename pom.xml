@@ -3,12 +3,26 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- More Project Information -->
     <groupId>cz.asenk.vsb.coinapocalypse</groupId>
     <artifactId>coin-apocalypse</artifactId>
     <version>2.1</version>
     <name>CoinApocalypse</name>
     <description>A Java II class semestral project.</description>
     <packaging>pom</packaging>
+    <inceptionYear>2021</inceptionYear>
+
+    <developers>
+        <developer>
+            <id>sen0057</id>
+            <name>Alois Šenkyřík</name>
+            <email>alois.senkyrik.st@vsb.cz</email>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
 
     <properties>
         <java.version>11</java.version>
@@ -22,6 +36,25 @@
         <module>modules/CoinApocalypse - Server</module>
     </modules>
 
+    <!-- Environment Settings -->
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>School public repository</name>
+            <url>https://artifactory.cs.vsb.cz/public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <uniqueVersion>true</uniqueVersion>
+            <id>vsb</id>
+            <name>VSB-TUO Public repository</name>
+            <url>https://artifactory.cs.vsb.cz/public/</url>
+        </repository>
+
+        <downloadUrl>https://artifactory.cs.vsb.cz/public/</downloadUrl>
+    </distributionManagement>
     <dependencies>
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>

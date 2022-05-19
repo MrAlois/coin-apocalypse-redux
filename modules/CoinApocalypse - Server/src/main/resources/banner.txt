@@ -5,4 +5,5 @@
 / /___/ /_/ / / / / /  /_____/   ___/ / /___/ _, _/| |/ / /___/ _, _/ 
 \____/\____/_/_/ /_/            /____/_____/_/ |_| |___/_____/_/ |_|  
 
-${AnsiColor.GREEN} Using SpringBoot ${spring-boot.formatted-version}
+${application.title} ${application.version}
+with SpringBoot - ${spring-boot.version}

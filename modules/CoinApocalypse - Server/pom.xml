@@ -49,6 +49,14 @@
             <artifactId>jaxb-api</artifactId>
             <version>2.4.0-b180830.0359</version>
         </dependency>
+
+        <dependency>
+            <groupId>cz.asenk.vsb.coinapocalypse</groupId>
+            <artifactId>coin-apocalypse-game</artifactId>
+            <version>2.1</version>
+            <scope>compile</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
