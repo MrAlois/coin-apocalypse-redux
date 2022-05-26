@@ -1,20 +1,21 @@
-package cz.asenk.vsb.coinapocalypse.server;
+package cz.asenk.vsb.coinapocalypse.server.model;
 
-import java.time.LocalDateTime;
-import java.util.Objects;
-
-import javax.persistence.*;
-
+import cz.asenk.vsb.coinapocalypse.server.enums.GameState;
+import lombok.*;
 import org.hibernate.Hibernate;
 import org.hibernate.annotations.CreationTimestamp;
 
-import lombok.*;
+import javax.persistence.*;
+import java.time.LocalDateTime;
+import java.util.Objects;
+
+@Builder
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 
 @Entity
 @Table(name = "gamerecords")
-@Data
-@NoArgsConstructor
-@RequiredArgsConstructor
 public class GameRecord {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
