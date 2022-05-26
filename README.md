@@ -48,15 +48,15 @@ Feel free to inspire yourself and if need be, comment and objectively critize.
 - [ ] \(Optional) Statistics using in-memory database (JDBC)
 
 ## v2.0 progress
-- [ ] Client-Server architecture with REST
-- [ ] Persistent data saved using JPA
-- [ ] Log integration using log4j2
-- [ ] CompletableFuture
-- [ ] Multi-lang support
-- [ ] Lombok
+- [X] Client-Server architecture with REST 	(SpringBoot)
+- [X] Persistent data saved using JPA		(Hibernate)
+- [X] Log integration using log4j2		(Slf4j + Logback)
+- [X] CompletableFuture				(Project Reactor)
+- [ ] Multi-lang support			
+- [X] Lombok		
 - [ ] Using Date
-- [ ] Streams and Lambda expressions
-- [ ] Buildable using Maven (exports runnable .jar or equivalent)
+- [X] Streams and Lambda expressions
+- [X] Buildable using Maven (exports runnable .jar or equivalent)
 
 ## Graphics
 This game uses so-called Sprite Book. It's a file, that is on a grid of constant lenghth (32px in this case). The Sprite book contains every frame of an drawable Entity, that is in the game (except for buttons, menus and in the future, the upgrades).
