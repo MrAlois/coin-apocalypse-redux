@@ -13,7 +13,7 @@ import org.springframework.data.repository.Repository;
 import org.springframework.stereotype.Component;
 
 @Component
-public class GameRecordRepository implements Repository<GameRecord, Long> {
+public class GameSessionRepository implements Repository<GameRecord, Long> {
 
     @PersistenceContext
     private EntityManager em;
