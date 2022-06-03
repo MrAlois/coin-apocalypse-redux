@@ -1,8 +1,11 @@
 package cz.asenk.vsb.coinapocalypse.game;
 
 import cz.asenk.vsb.coinapocalypse.JavaFxApplication;
+import cz.asenk.vsb.coinapocalypse.game.entities.Record;
 import cz.asenk.vsb.coinapocalypse.game.entities.*;
+import cz.asenk.vsb.coinapocalypse.game.enums.GameState;
 import cz.asenk.vsb.coinapocalypse.graphics.Art;
+import cz.asenk.vsb.coinapocalypse.webclient.ServerConnector;
 import javafx.animation.AnimationTimer;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
@@ -166,11 +169,15 @@ public class Game {
 			if(i == null)
 				return;
 
-			if(i.getName().equals("coin"))
-				coins += coinMultiplier;	// Sound event and relocating of the coin is done in inside the class
+			if(i.getName().equals("coin")) {
+				coins += coinMultiplier;    // Sound event and relocating of the coin is done in inside the class
+				log.debug("Coin picked up! New value: {} ", coins);
+			}
 
-			if(i.getName().equals("meteor"))
+			if(i.getName().equals("meteor")){
 				isRunning = false;
+				log.debug("Meteor hit. Restarting game!");
+			}
 		});
 	}
 	
@@ -199,6 +206,7 @@ public class Game {
 				m.updateDifficulty(gameDifficulty);
 			}
 			diffChange = false;
+			log.debug("Changing difficulty to {}!", gameDifficulty);
 		}
 	}
 	
@@ -209,7 +217,11 @@ public class Game {
 			gc.fillRect(0, 100, 50, 100);
 			gc.restore();
 		}
-		
+
+		// E
+		ServerConnector.sendRecord(
+				new Record("Player1", Integer.toString(score), GameState.LOST));
+
 		exit();
 		
 		try {

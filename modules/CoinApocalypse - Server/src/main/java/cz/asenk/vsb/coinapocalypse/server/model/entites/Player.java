@@ -1,4 +1,4 @@
-package cz.asenk.vsb.coinapocalypse.server.model;
+package cz.asenk.vsb.coinapocalypse.server.model.entites;
 
 import lombok.*;
 

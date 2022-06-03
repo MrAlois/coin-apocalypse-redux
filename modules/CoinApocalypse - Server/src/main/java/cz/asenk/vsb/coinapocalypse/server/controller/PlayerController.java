@@ -1,6 +1,6 @@
 package cz.asenk.vsb.coinapocalypse.server.controller;
 
-import cz.asenk.vsb.coinapocalypse.server.model.Player;
+import cz.asenk.vsb.coinapocalypse.server.model.entites.Player;
 import cz.asenk.vsb.coinapocalypse.server.repository.PlayerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

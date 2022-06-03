@@ -1,5 +1,7 @@
 package cz.asenk.vsb.coinapocalypse;
 
+import cz.asenk.vsb.coinapocalypse.webclient.PingerScheduler;
+import cz.asenk.vsb.coinapocalypse.webclient.ServerConnector;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -14,6 +16,8 @@ public class JavaFxApplication extends javafx.application.Application {
     private static Scene scene;
     private static Stage primaryStage;
 
+    private ServerConnector connector;
+
     @Override
     public void start(Stage stage) throws IOException {
         primaryStage = stage;
@@ -27,6 +31,9 @@ public class JavaFxApplication extends javafx.application.Application {
 
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
+
+        ServerConnector.withUrl("http://localhost:8080");
+        PingerScheduler.start();
         primaryStage.show();
     }
 
@@ -35,11 +42,13 @@ public class JavaFxApplication extends javafx.application.Application {
     }
 
     public static void exitApp() {
+        PingerScheduler.stop();
         primaryStage.close();
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(JavaFxApplication.class.getResource("/fxml/" + fxml + ".fxml"));
+        log.debug("Changing screen controller to {}.", fxml);
         return fxmlLoader.load();
     }
 

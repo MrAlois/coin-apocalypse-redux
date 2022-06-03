@@ -2,13 +2,12 @@ package cz.asenk.vsb.coinapocalypse.game.entities;
 
 
 import cz.asenk.vsb.coinapocalypse.game.Game;
-import cz.asenk.vsb.coinapocalypse.game.PlayerState;
+import cz.asenk.vsb.coinapocalypse.game.enums.PlayerState;
 import cz.asenk.vsb.coinapocalypse.game.Sound;
 import cz.asenk.vsb.coinapocalypse.graphics.Art;
 import cz.asenk.vsb.coinapocalypse.graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
-import lombok.Data;
 import lombok.Getter;
 
 import java.util.List;

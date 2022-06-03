@@ -1,8 +1,10 @@
 package cz.asenk.vsb.coinapocalypse.server.controller;
 
-import cz.asenk.vsb.coinapocalypse.server.model.Item;
+import cz.asenk.vsb.coinapocalypse.server.model.entites.Item;
 import cz.asenk.vsb.coinapocalypse.server.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import lombok.val;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,11 +13,12 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
+@Slf4j
 @RequiredArgsConstructor
 
 @RestController
 public class ItemManagementController {
-    private ItemRepository repository;
+    private final ItemRepository repository;
 
     @PostMapping("/item")
     public void addItem(@RequestBody Item item){
@@ -35,18 +38,28 @@ public class ItemManagementController {
     }
 
     @PutMapping("/item/{id}")
-    public void updateItem(@PathVariable("id") Long id, @RequestBody Item item){
-        var updatedItem = repository.findById(id).get().builder()
-                .name(item.getName())
-                .effect(item.getEffect())
-                .price(item.getPrice())
-                .build();
+    public void updateItem(@PathVariable("id") Long id, @RequestBody Item newItem){
+        val updatedItem = repository.findById(id);
 
-        repository.save(updatedItem);
+        updatedItem.ifPresentOrElse(item -> {
+            val updated = item.toBuilder()
+                    .name(newItem.getName())
+                    .effect(newItem.getEffect())
+                    .price(newItem.getPrice())
+                    .build();
+
+            repository.save(updated);
+            log.info("Item sucessfully updated. {}", updated);
+        }, () -> log.error("Item couldn't be saved to repository. {}", updatedItem));
     }
 
     @DeleteMapping("/item/{id}/delete")
     public void deleteItem(@Param("id") Long id){
-        repository.delete(repository.findById(id).get());
+        val itemToBeDeleted = repository.findById(id);
+
+        itemToBeDeleted.ifPresentOrElse(item -> {
+            repository.delete(item);
+            log.info("Item has been deleted. {}", itemToBeDeleted);
+        }, () -> log.error("Item couldn't be deleted. {}", itemToBeDeleted));
     }
 }

@@ -1,4 +1,4 @@
-package cz.asenk.vsb.coinapocalypse.server.model;
+package cz.asenk.vsb.coinapocalypse.server.model.entites;
 
 import cz.asenk.vsb.coinapocalypse.server.enums.ItemEffect;
 import lombok.AllArgsConstructor;
@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Builder
+@Builder(toBuilder = true)
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor

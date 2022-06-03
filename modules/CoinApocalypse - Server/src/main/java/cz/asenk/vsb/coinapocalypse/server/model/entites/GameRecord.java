@@ -1,4 +1,4 @@
-package cz.asenk.vsb.coinapocalypse.server.model;
+package cz.asenk.vsb.coinapocalypse.server.model.entites;
 
 import cz.asenk.vsb.coinapocalypse.server.enums.GameState;
 import lombok.*;
@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-@Builder
+@Builder(toBuilder = true)
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
