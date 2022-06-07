@@ -1,3 +1,5 @@
+[![Qodana](https://github.com/MrAlois/coin-apocalypse-redux/actions/workflows/code_quality.yml/badge.svg)](https://github.com/MrAlois/coin-apocalypse-redux/actions/workflows/code_quality.yml)
+
 # Coin Apocalypse - Java clone
 _A game clone for a school project using JavaFX, FXML and JDBC. Don't take this shitty code seriously. :)_
 
