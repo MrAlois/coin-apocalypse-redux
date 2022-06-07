@@ -1,7 +1,15 @@
-[![Qodana](https://github.com/MrAlois/coin-apocalypse-redux/actions/workflows/code_quality.yml/badge.svg)](https://github.com/MrAlois/coin-apocalypse-redux/actions/workflows/code_quality.yml)
 
 # Coin Apocalypse - Java clone
-_A game clone for a school project using JavaFX, FXML and JDBC. Don't take this shitty code seriously. :)_
+_A game clone for a school project using JavaFX, FXML and JDBC. WARNING: Bad code._
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=MrAlois_coin-apocalypse-redux&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=MrAlois_coin-apocalypse-redux)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=MrAlois_coin-apocalypse-redux&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=MrAlois_coin-apocalypse-redux)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=MrAlois_coin-apocalypse-redux&metric=bugs)](https://sonarcloud.io/summary/new_code?id=MrAlois_coin-apocalypse-redux)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=MrAlois_coin-apocalypse-redux&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=MrAlois_coin-apocalypse-redux)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=MrAlois_coin-apocalypse-redux&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=MrAlois_coin-apocalypse-redux)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=MrAlois_coin-apocalypse-redux&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=MrAlois_coin-apocalypse-redux)
+
+
 
 ![CoinApocalypseTitle](modules/CoinApocalypse/src/main/resources/img/menu/CoinApocalypse.png?raw=true "Coin Apocalypse Redux Logo")
 
