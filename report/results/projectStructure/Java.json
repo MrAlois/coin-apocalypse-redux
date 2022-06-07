@@ -1,0 +1,16 @@
+{
+  "modules": [
+    {
+      "name": "coin-apocalypse-server",
+      "languageLevel": 11
+    },
+    {
+      "name": "coin-apocalypse",
+      "languageLevel": 11
+    },
+    {
+      "name": "coin-apocalypse-game",
+      "languageLevel": 11
+    }
+  ]
+}
