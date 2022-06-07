@@ -1,0 +1,365 @@
+{"version":"3","listProblem":[{
+  "tool": "Code Inspection",
+  "category": "Threading issues",
+  "type": "Synchronization on a non-final field",
+  "severity": "High",
+  "comment": "Synchronization on a non-final field 'clip'",
+  "detailsInfo": "Reports `synchronized` statement lock expressions that consist of a non-`final` field reference. Such statements are unlikely to have useful semantics, as different threads may acquire different locks even when operating on the same object.\n\n**Example:**\n\n\n      private Object o;\n      public void foo() {\n        synchronized (o) // synchronization on a non-final field\n        { }\n      }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "modules/CoinApocalypse/src/main/java/cz/asenk/vsb/coinapocalypse/game/Sound.java",
+      "language": "JAVA",
+      "line": 38,
+      "offset": 20,
+      "length": 4,
+      "code": {
+        "startLine": 36,
+        "length": 4,
+        "offset": 65,
+        "surroundingCode": "\t\t\tif (clip != null) {\n\t\t\t\tnew Thread(() -> {\n\t\t\t\t\tsynchronized (clip) {\n\t\t\t\t\t\tclip.stop();\n\t\t\t\t\t\tclip.setFramePosition(0);"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "coin-apocalypse-game",
+    "inspectionName": "SynchronizeOnNonFinalField"
+  },
+  "hash": "61539b34ef9fc6bfd7c5117bcbc1d147b6004ab72dbc7e09e987f5af46a5c95a"
+},{
+  "tool": "Code Inspection",
+  "category": "Probable bugs",
+  "type": "Suspicious variable/parameter name combination",
+  "severity": "High",
+  "comment": "'DEF_TILE_WIDTH' should probably not be assigned to 'height'",
+  "detailsInfo": "Reports assignments and function calls in which the name of the target variable or the function parameter does not match the name of the value assigned to it.\n\nExample 1:\n\n\n      int x = 0;\n      int y = x; // x is used as a y-coordinate\n      \nExample 2:\n\n\n      int x = 0, y = 0;\n      // x is used as a y-coordinate and y as an x-coordinate\n      Rectangle rc = new Rectangle(y, x, 20, 20);\n\nConfigure the inspection:\n\nUse the **Group of names** area to specify the names which should not be used together: an error is reported\nif the parameter name or assignment target name contains words from one group and the name of the assigned or passed\nvariable contains words from a different group.\n\nUse the **Ignore methods** area to specify the methods that should not be checked but have a potentially suspicious name.\nFor example, the `Integer.compare()` parameters are named `x` and `y` but are unrelated to coordinates.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "modules/CoinApocalypse/src/main/java/cz/asenk/vsb/coinapocalypse/game/entities/Coin.java",
+      "language": "JAVA",
+      "line": 16,
+      "offset": 3,
+      "length": 11,
+      "code": {
+        "startLine": 14,
+        "length": 11,
+        "offset": 55,
+        "surroundingCode": "\t\tthis.art = art;\n\t\tthis.width = Art.DEF_TILE_WIDTH;\n\t\tthis.height= Art.DEF_TILE_WIDTH;\n\t\t\n\t\tthis.generateCoordinates();"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "coin-apocalypse-game",
+    "inspectionName": "SuspiciousNameCombination"
+  },
+  "hash": "9a4c6157c290909dcd71b6a46284246403ee7f9467f31c6127ce7b84d2498755"
+},{
+  "tool": "Code Inspection",
+  "category": "Probable bugs",
+  "type": "Suspicious variable/parameter name combination",
+  "severity": "High",
+  "comment": "'DEF_TILE_WIDTH' should probably not be assigned to 'height'",
+  "detailsInfo": "Reports assignments and function calls in which the name of the target variable or the function parameter does not match the name of the value assigned to it.\n\nExample 1:\n\n\n      int x = 0;\n      int y = x; // x is used as a y-coordinate\n      \nExample 2:\n\n\n      int x = 0, y = 0;\n      // x is used as a y-coordinate and y as an x-coordinate\n      Rectangle rc = new Rectangle(y, x, 20, 20);\n\nConfigure the inspection:\n\nUse the **Group of names** area to specify the names which should not be used together: an error is reported\nif the parameter name or assignment target name contains words from one group and the name of the assigned or passed\nvariable contains words from a different group.\n\nUse the **Ignore methods** area to specify the methods that should not be checked but have a potentially suspicious name.\nFor example, the `Integer.compare()` parameters are named `x` and `y` but are unrelated to coordinates.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "modules/CoinApocalypse/src/main/java/cz/asenk/vsb/coinapocalypse/game/entities/Meteor.java",
+      "language": "JAVA",
+      "line": 18,
+      "offset": 3,
+      "length": 11,
+      "code": {
+        "startLine": 16,
+        "length": 11,
+        "offset": 55,
+        "surroundingCode": "\t\tthis.art = art;\n\t\tthis.width = Art.DEF_TILE_WIDTH;\n\t\tthis.height= Art.DEF_TILE_WIDTH;\n\t\t\n\t\tthis.difficulty = difficulty;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "coin-apocalypse-game",
+    "inspectionName": "SuspiciousNameCombination"
+  },
+  "hash": "b3580719d523547d384557b22b8d968e6a82ed36ab2c6e7e979f86febe8a24ed"
+},{
+  "tool": "Code Inspection",
+  "category": "Probable bugs",
+  "type": "Call to default 'toString()'",
+  "severity": "High",
+  "comment": "Call to default 'toString()' on 'updated'",
+  "detailsInfo": "Reports calls to `toString()` that use the default implementation from `java.lang.Object`.\n\nThe default implementation is rarely intended but may be used by accident.\n\n\nCalls to `toString()` on objects with `java.lang.Object`,\ninterface or abstract class type are ignored by this inspection.\n\n**Example:**\n\n\n      class Bar {\n          void foo1(Bar bar) {\n              String s = bar.toString(); // warning\n              /* ... */\n          }\n\n          void foo2(Object obj) {\n              String s = obj.toString(); // no warning here\n              /* ... */\n          }\n      }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "modules/CoinApocalypse - Server/src/main/java/cz/asenk/vsb/coinapocalypse/server/controller/GameRecordController.java",
+      "language": "JAVA",
+      "line": 55,
+      "offset": 60,
+      "length": 7,
+      "code": {
+        "startLine": 53,
+        "length": 7,
+        "offset": 98,
+        "surroundingCode": "\n            repository.save(updated);\n            log.info(\"GameRecord sucessfully updated. {}\", updated.toString());\n        }, () -> log.error(\"GameRecord couldn't be saved to repository. {}\", updatedItem));\n    }"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "coin-apocalypse-server",
+    "inspectionName": "ObjectToString"
+  },
+  "hash": "647c5ae8621e6f4b82421bd84dd5168db30fb2730c70b4014c300e13fcd78dec"
+},{
+  "tool": "Code Inspection",
+  "category": "Code maturity",
+  "type": "Call to 'printStackTrace()'",
+  "severity": "High",
+  "comment": "Call to 'printStackTrace()' should probably be replaced with more robust logging",
+  "detailsInfo": "Reports calls to `Throwable.printStackTrace()` without arguments.\n\nSuch statements are often used for temporary debugging and should be either removed from the production code\nor replaced with a more robust logging facility.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "modules/CoinApocalypse/src/main/java/cz/asenk/vsb/coinapocalypse/scenes/GameScreenController.java",
+      "language": "JAVA",
+      "line": 45,
+      "offset": 8,
+      "length": 15,
+      "code": {
+        "startLine": 43,
+        "length": 15,
+        "offset": 87,
+        "surroundingCode": "\t\t\t\t\tJavaFxApplication.setRoot(\"upgrade_screen\");\n\t\t\t\t} catch (IOException e) {\n\t\t\t\t\te.printStackTrace();\n\t\t\t\t}\n\t\t\t}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "coin-apocalypse-game",
+    "inspectionName": "ThrowablePrintStackTrace"
+  },
+  "hash": "1cd0c67d45ff0575d1a3c6f0ecdff6c066f8f214c1c03c23f148515fe522f779"
+},{
+  "tool": "Code Inspection",
+  "category": "Probable bugs",
+  "type": "Unused assignment",
+  "severity": "High",
+  "comment": "The value false assigned to 'diffChange' is never used",
+  "detailsInfo": "Reports assignment values that are not used after the assignment. If the assignment value is unused, it's better to remove the assignment to shorten the code and avoid redundant allocations.\n\nThe following cases are reported:\n\n* The variable never gets read after the assignment.\n* The variable is always overwritten with a new value before it is read.\n* The variable initializer is redundant (for one of the two reasons above).\n\nConfigure the inspection:\n\n\nUse the **Report redundant initializers** option to report redundant initializers:\n\n\n      int getI() {\n        int i = 0; // redundant initialization\n        i = 2;\n        return i;\n      }\n\n\nUse the **Report ++i when may be replaced with (i + 1)** option to report the cases when `++i` expression\nmay be replaced with `i + 1`:\n\n\n      int preInc(int i) {\n        int res = i;\n        return ++res;\n      }\n\n\nUse the **Report i++ when changed value is not used afterwards** option to report the cases when the result of `i++` expression\nis not used later:\n\n\n      int postInc(int i) {\n        int res = i;\n        return res++;\n      }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "modules/CoinApocalypse/src/main/java/cz/asenk/vsb/coinapocalypse/game/Game.java",
+      "language": "JAVA",
+      "line": 208,
+      "offset": 4,
+      "length": 10,
+      "code": {
+        "startLine": 206,
+        "length": 10,
+        "offset": 48,
+        "surroundingCode": "\t\t\t\tm.updateDifficulty(gameDifficulty);\n\t\t\t}\n\t\t\tdiffChange = false;\n\t\t\tlog.debug(\"Changing difficulty to {}!\", gameDifficulty);\n\t\t}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "coin-apocalypse-game",
+    "inspectionName": "UnusedAssignment"
+  },
+  "hash": "dc5003a0d20bf4fcbb3b6748dd3771e78c911f62418e49da8432a42c74be5e87"
+},{
+  "tool": "Code Inspection",
+  "category": "Probable bugs",
+  "type": "Unused assignment",
+  "severity": "High",
+  "comment": "The value tick assigned to 'animStartTick' is never used",
+  "detailsInfo": "Reports assignment values that are not used after the assignment. If the assignment value is unused, it's better to remove the assignment to shorten the code and avoid redundant allocations.\n\nThe following cases are reported:\n\n* The variable never gets read after the assignment.\n* The variable is always overwritten with a new value before it is read.\n* The variable initializer is redundant (for one of the two reasons above).\n\nConfigure the inspection:\n\n\nUse the **Report redundant initializers** option to report redundant initializers:\n\n\n      int getI() {\n        int i = 0; // redundant initialization\n        i = 2;\n        return i;\n      }\n\n\nUse the **Report ++i when may be replaced with (i + 1)** option to report the cases when `++i` expression\nmay be replaced with `i + 1`:\n\n\n      int preInc(int i) {\n        int res = i;\n        return ++res;\n      }\n\n\nUse the **Report i++ when changed value is not used afterwards** option to report the cases when the result of `i++` expression\nis not used later:\n\n\n      int postInc(int i) {\n        int res = i;\n        return res++;\n      }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "modules/CoinApocalypse/src/main/java/cz/asenk/vsb/coinapocalypse/graphics/Sprite.java",
+      "language": "JAVA",
+      "line": 23,
+      "offset": 4,
+      "length": 13,
+      "code": {
+        "startLine": 21,
+        "length": 13,
+        "offset": 43,
+        "surroundingCode": "\t\t\n\t\tif(tick - animStartTick > delay) {\n\t\t\tanimStartTick = tick;\n\t\t\t\n\t\t\tif(frame + 1 < maxCols) "
+      }
+    }
+  ],
+  "attributes": {
+    "module": "coin-apocalypse-game",
+    "inspectionName": "UnusedAssignment"
+  },
+  "hash": "5a964e34a7f6b2df280cf06e02a7ca98aaed319983980a383cec9d74eca95925"
+},{
+  "tool": "Code Inspection",
+  "category": "Probable bugs",
+  "type": "'equals()' method which does not check class of parameter",
+  "severity": "High",
+  "comment": "'equals()' should check the class of its parameter",
+  "detailsInfo": "Reports `equals()` methods that do not check the type of their parameter.\n\nFailure to check the type of the parameter\nin the `equals()` method may result in latent errors if the object is used in an untyped collection.\n\n**Example:**\n\n\n      class MyClass {\n        int x;\n\n        @Override\n        public boolean equals(Object obj) {\n          // equals method should return false if obj is not MyClass\n          return ((MyClass)obj).x == x;\n        }\n      }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "modules/CoinApocalypse - Server/src/main/java/cz/asenk/vsb/coinapocalypse/server/model/entites/GameRecord.java",
+      "language": "JAVA",
+      "line": 40,
+      "offset": 20,
+      "length": 6,
+      "code": {
+        "startLine": 38,
+        "length": 6,
+        "offset": 34,
+        "surroundingCode": "\n    @Override\n    public boolean equals(Object o) {\n        if (this == o) return true;\n        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "coin-apocalypse-server",
+    "inspectionName": "EqualsWhichDoesntCheckParameterClass"
+  },
+  "hash": "9b8672a9502e3a1b01b9ab04660bebe80e16291440129d6fae995944eb0af473"
+},{
+  "tool": "Code Inspection",
+  "category": "Probable bugs",
+  "type": "Optional.get() is called without isPresent() check",
+  "severity": "High",
+  "comment": "'Optional.get()' without 'isPresent()' check",
+  "detailsInfo": "Reports calls to `get()` on an `Optional` without checking that it has a value.\n\nCalling `Optional.get()` on an empty `Optional` instance will throw an exception.\n\n**Example:**\n\n\n      void x(List<Integer> list) {\n        final Optional<Integer> optional =\n          list.stream().filter(x -> x > 10).findFirst();\n        final Integer result = optional.get(); // problem here\n      }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "modules/CoinApocalypse - Server/src/main/java/cz/asenk/vsb/coinapocalypse/server/controller/PlayerController.java",
+      "language": "JAVA",
+      "line": 52,
+      "offset": 51,
+      "length": 3,
+      "code": {
+        "startLine": 50,
+        "length": 3,
+        "offset": 156,
+        "surroundingCode": "    @DeleteMapping(\"/player/{player}/delete\")\n    public void deletePlayer(@PathParam(\"player\") Long id){\n        repository.delete(repository.findById(id).get());\n    }\n}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "coin-apocalypse-server",
+    "inspectionName": "OptionalGetWithoutIsPresent"
+  },
+  "hash": "417b57277a7bc53d4ae74806851ea2be948b85254d0fc04bd487e0ec7f4734f0"
+},{
+  "tool": "Code Inspection",
+  "category": "Probable bugs",
+  "type": "Optional.get() is called without isPresent() check",
+  "severity": "High",
+  "comment": "'Optional.get()' without 'isPresent()' check",
+  "detailsInfo": "Reports calls to `get()` on an `Optional` without checking that it has a value.\n\nCalling `Optional.get()` on an empty `Optional` instance will throw an exception.\n\n**Example:**\n\n\n      void x(List<Integer> list) {\n        final Optional<Integer> optional =\n          list.stream().filter(x -> x > 10).findFirst();\n        final Integer result = optional.get(); // problem here\n      }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "modules/CoinApocalypse - Server/src/main/java/cz/asenk/vsb/coinapocalypse/server/controller/PlayerController.java",
+      "language": "JAVA",
+      "line": 39,
+      "offset": 53,
+      "length": 3,
+      "code": {
+        "startLine": 37,
+        "length": 3,
+        "offset": 176,
+        "surroundingCode": "    @PutMapping(\"/player/{player}\")\n    public void updatePlayer(@PathParam(\"player\") Long id, @RequestBody Player player){\n        var updatedPlayer = repository.findById(id).get().builder()\n                .name(player.getName())\n                .surname(player.getSurname())"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "coin-apocalypse-server",
+    "inspectionName": "OptionalGetWithoutIsPresent"
+  },
+  "hash": "f0df03c274b6085fa6117cd2e789fcc6ed8151d481a1da5c648664750c7bbd1b"
+},{
+  "tool": "Code Inspection",
+  "category": "Probable bugs",
+  "type": "Optional.get() is called without isPresent() check",
+  "severity": "High",
+  "comment": "'Optional.get()' without 'isPresent()' check",
+  "detailsInfo": "Reports calls to `get()` on an `Optional` without checking that it has a value.\n\nCalling `Optional.get()` on an empty `Optional` instance will throw an exception.\n\n**Example:**\n\n\n      void x(List<Integer> list) {\n        final Optional<Integer> optional =\n          list.stream().filter(x -> x > 10).findFirst();\n        final Integer result = optional.get(); // problem here\n      }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "modules/CoinApocalypse - Server/src/main/java/cz/asenk/vsb/coinapocalypse/server/controller/PlayerController.java",
+      "language": "JAVA",
+      "line": 34,
+      "offset": 40,
+      "length": 3,
+      "code": {
+        "startLine": 32,
+        "length": 3,
+        "offset": 134,
+        "surroundingCode": "    @GetMapping(\"/player/{player}\")\n    public Player getPlayer(@PathParam(\"player\") Long id){\n        return repository.findById(id).get();\n    }\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "coin-apocalypse-server",
+    "inspectionName": "OptionalGetWithoutIsPresent"
+  },
+  "hash": "f64ec7e23fdb17f2217bec1ab2ae6926498438f023f4b25ec89f23637376e530"
+},{
+  "tool": "Code Inspection",
+  "category": "Threading issues",
+  "type": "Field accessed in both 'synchronized' and unsynchronized contexts",
+  "severity": "High",
+  "comment": "Field 'clip' is accessed in both synchronized and unsynchronized contexts",
+  "detailsInfo": "Reports non-final fields that are accessed in both `synchronized` and non-`synchronized` contexts. `volatile` fields as well as accesses in constructors and initializers are ignored by this inspection.\n\n\nSuch \"partially synchronized\" access is often the result of a coding oversight\nand may lead to unexpectedly inconsistent data structures.\n\n**Example:**\n\n\n      public class Program {\n        Console console; // warning: Field 'console' is accessed in both synchronized and unsynchronized contexts\n\n        public synchronized void execute() {\n          console.print(\"running\");\n        }\n\n        public void check() {\n          console.check();\n        }\n      }\n\n\nUse the option to specify if simple getters and setters are counted as accesses too.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "modules/CoinApocalypse/src/main/java/cz/asenk/vsb/coinapocalypse/game/Sound.java",
+      "language": "JAVA",
+      "line": 17,
+      "offset": 15,
+      "length": 4,
+      "code": {
+        "startLine": 15,
+        "length": 4,
+        "offset": 97,
+        "surroundingCode": "\tpublic static final Sound click = loadSound(\"src/main/resources/snd/click.wav\");\n\n\tprivate Clip clip;\n\n\tpublic static Sound loadSound(String fileName) {"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "coin-apocalypse-game",
+    "inspectionName": "FieldAccessedSynchronizedAndUnsynchronized"
+  },
+  "hash": "e9cfa18a8a3c4785a24d92e0de6169c480e032663ac71152badb3dcf77c07eeb"
+},{
+  "tool": "Code Inspection",
+  "category": "Class structure",
+  "type": "Utility class with 'public' constructor",
+  "severity": "High",
+  "comment": "Class 'ServerConnector' has only 'static' members, and a 'public' constructor",
+  "detailsInfo": "Reports utility classes with `public` constructors.\n\nUtility classes have all fields and methods declared as `static`. Creating a `public`\nconstructor in such classes is confusing and may cause accidental class instantiation.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "modules/CoinApocalypse/src/main/java/cz/asenk/vsb/coinapocalypse/webclient/ServerConnector.java",
+      "language": "JAVA",
+      "line": 11,
+      "offset": 14,
+      "length": 15,
+      "code": {
+        "startLine": 9,
+        "length": 15,
+        "offset": 21,
+        "surroundingCode": "\n@Slf4j\npublic class ServerConnector {\n    private static final ObjectMapper mapper = new ObjectMapper();\n    private static String baseUrl = \"\";"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "coin-apocalypse-game",
+    "inspectionName": "UtilityClassWithPublicConstructor"
+  },
+  "hash": "980ef2e02a252e7ccd24bed5d2a85b66d787c7e8ff658b473a78a006ee79f168"
+}]}
