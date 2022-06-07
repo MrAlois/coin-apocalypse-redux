@@ -9,10 +9,6 @@ _A game clone for a school project using JavaFX, FXML and JDBC. WARNING: Bad cod
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=MrAlois_coin-apocalypse-redux&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=MrAlois_coin-apocalypse-redux)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=MrAlois_coin-apocalypse-redux&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=MrAlois_coin-apocalypse-redux)
 
-
-
-![CoinApocalypseTitle](modules/CoinApocalypse/src/main/resources/img/menu/CoinApocalypse.png?raw=true "Coin Apocalypse Redux Logo")
-
 ## About
 This repository is simply a testing environment for testing new stuff. Originally it started as a school semestral project back in 2020, when I didn't know anything related to Java. 
 
