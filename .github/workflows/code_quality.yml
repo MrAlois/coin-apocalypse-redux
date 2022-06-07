@@ -8,47 +8,24 @@ on:
       - 'releases/*'
 
 jobs:
-  code_inspection:
+  qodana:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        
-      - name: Qodana - Code Inspection
-        uses: JetBrains/qodana-action@v2.0-eap
+      - name: 'Checkout'
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          
+      - name: 'Qodana Scan'
+        uses: JetBrains/qodana-action@v5.1.0
         
       - uses: actions/upload-artifact@v2
         with:
           path: ${{ github.workspace }}/qodana
-      - uses: actions/download-artifact@v2
-        id: download
-        with:
-          name: 'artifact'
-          path: qodana
-      - name: Deploy to Pages
-        uses: peaciris/actions-gh-pages@v3
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./qodana/report
-          destination_dir: ./
-          
-  qodana:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - name: 'Qodana Scan'
-        uses: JetBrains/qodana-action@v5.1.0
-
-      - uses: github/codeql-action/upload-sarif@v2
-        with:
-          sarif_file: ${{ runner.temp }}/qodana/results/qodana.sarif.json
           
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{ runner.temp }}/qodana/results/report
-          destination_dir: ./report
+          destination_dir: ./
