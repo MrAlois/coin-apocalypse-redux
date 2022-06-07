@@ -23,13 +23,6 @@
     </properties>
 
     <dependencies>
-        <!-- FXGL - JavaFx game library-->
-        <dependency>
-            <groupId>com.github.almasb</groupId>
-            <artifactId>fxgl</artifactId>
-            <version>17.1</version>
-        </dependency>
-
         <!-- JavaFX -->
         <dependency>
             <groupId>org.openjfx</groupId>
